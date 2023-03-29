@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: white;
+    --back-url: url(./assets/bg-mobile.jpg);/*background*/
+    --stroke-color: rgba(255, 255, 255, 0.5); /*bordas*/
+    --surface-color: rgba(255,255,255, 0.05); /*cor do fundo*/
+    --surface-color-hover: rgba(0,0,0, 0.02); /*ao passar o mouse*/
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+    --surface-color-opt: rgb(35, 35, 35);
+
+
+}
+
+
+
+.light {
+    --text-color: black; /*Variavel p/ cor do texto*/
+    --back-url: url(assets/bg-mobile-light.jpg); /*variavel para cor do fundo*/
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0,0,0, 0.05);
+    --surface-color-hover: rgba(255,255,255, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/sun.svg);
+    --surface-color-opt: rgb(220, 220, 220);
+
+}
+
+
+body {
+    background: var(--back-url);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+#container {
+    /*border: 1px solid red;*/
+    width: 360px;
+    height: 712px;
+    margin: 56px auto 0px;
+    text-align: center;
+    padding: 0 24px;
+}
+
+#profile img {
+    width: 112px;
+}
+
+#profile p {
+    font-weight: 500px;
+    line-height: 24px;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column; /*flex direction organiza o elemento de display flex*/
+    gap: 16px; /*cria um espaço entre os itens apenas*/
+    padding: 24px 0;
+}
+ul li a{
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center; /*alinhamento na horizontal*/
+    align-items: center;    /*alinhamento na vertical*/
+
+    padding: 16px 24px;
+
+    background: var(--surface-color);
+    backdrop-filter: blur(4px); /*nem todo navegador aceita o blur*/
+    -webkit-backdrop-filter: blur(4px);/*precisa do webkit para compatibilidade*/
+
+    text-decoration: none; /*tira o sublinhado*/
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+ul li a:hover{
+    background: var(--surface-color-hover);/*muda o fundo qnd passa o mouse*/
+    border: 1.5px solid var(--text-color);/*muda a borda*/
+}
+
+#social{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px 0;
+    font-size: 24px;
+}
+
+#social a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+#social a:hover{
+    background: var(--highlight-color);
+}
+
+footer{
+    padding: 24px 0;
+    text-align: center;
+    font-size: 12px;
+}
+
+#switch{
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+
+#switch button{
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+
+    left: 0;
+    z-index: 1; /*colocar o botão uma camada acima*/
+    transform: translateY(-50%);
+}
+
+.light #switch button{
+    right: 0;
+    left: initial;
+}
+
+#switch span{
+    border: 1px solid var(--stroke-color);
+    background: var(--surface-color);
+    display: block;
+    width: 64px;
+    height: 24px;
+    border-radius: 9999px;
+}
+
+#entrega_kits{
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 1px;
+    gap: 10px;
+}
+
+input{
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    margin: 7px 0;
+    
+}
+
+input:hover{
+    background: var(--surface-color-hover);/*muda o fundo qnd passa o mouse*/
+    border: 1.5px solid var(--text-color);
+}
+
+#botao{
+    display: flex;
+    margin: auto;
+    border-radius: 5px;
+    padding: 1px 5px;
+}
+
+#adicional{
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 5px;
+
+}
+#adicional .numeral{
+    width: 150px;
+}
+h2{
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+select{
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+}
+select {
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+}
+option{
+    background-color: var(--surface-color-opt);
+    color: var(--text-color);
+}

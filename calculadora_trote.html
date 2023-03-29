@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Condicional</title>
+</head>
+<body>
+    <div id="container">
+        <div id="profile">
+            <img src="./assets/logo-trote-2.png"
+                alt="Trote Solidário 2023"/>
+            <p> @troteunifacef </p>
+            <div id="switch" onclick="trocaSwitch()">
+                <button></button>
+                <span></span>
+            </div>
+        </div>
+        <ul> <!-- unorded list -->
+            <li> 
+                <a href="index.html"> Home </a>   
+            </li>
+            <li> 
+                <a href="adicional.html">Calcular Adicional </a>   
+            </li>
+        </ul>
+        <div id="entrega_kits">
+            
+            <h2>Calculadora do Trote</h2>
+
+            <p>
+                Qual equipe deseja calcular 
+                <select name="equipes" id="equipes">
+                    <option value="Amarela" id="amarela">Amarela</option>
+                    <option value="Laranja" id="laranja">Laranja</option>
+                    <option value="Roxa" id="roxa">Roxa</option>
+                    <option value="Verde" id="verde">Verde</option>
+                    <option value="Vermelha" id="vermelha">Vermelha</option>
+                </select>
+            </p>
+
+            <p>
+                Informe o total de kits entregues: <input type="number" id="kits">
+                <input type="button" value="Calcular pontuação" id="botao" onclick="calcpont()">
+            </p>
+
+            <div>
+                <p id="res"></p>
+            </div>
+         </div>
+
+        <!--
+        <div id="social">
+            <a href="https://github.com/Chiqueto" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+            <a href="https://instagram.com/lfchiqueto" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="https://youtube.com/@luisfelipe9867" target="_blank"><ion-icon name="logo-youtube"></ion-icon></a>
+            <a href="https://www.linkedin.com/in/luis-felipe-chiqueto-628b8625a/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+        </div>
+        -->
+        
+    
+
+        <footer>
+            
+            Feito por alunos da Turma VII de Bacharelado de
+            Engenharia de Software do <a href="https://unifacef.com.br" target="_blank">Uni-FACEF</a>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
