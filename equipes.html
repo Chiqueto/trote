@@ -1,12 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pontuação Final</title>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+
+    <div id="container">
+
+        <div id="profile">
+            <a href="index.html">
+                <img src="./assets/logo-trote-2.png"
+                alt="Trote Solidário 2023"/>
+            </a>
+            
+            <p> @troteunifacef </p>
+            <div id="switch" onclick="trocaSwitch()">
+                <button></button>
+                <span></span>
+            </div>
+        </div>
+        <ul> <!-- unorded list -->
+            <li> 
+                <a href="calculadora_trote.html">Calculadora trote</a> 
+            </li>
+            <li> 
+                <a href="adicional.html">Calculadora Adicional</a> 
+            </li>
+
+        <input type="button" value="Mostrar Pontuação" onclick="mostrar()">
+        <div id="tabelaFinal">
+            <div id="equipesFinal" class="itensTabela2">
+                <p id="titulo">Equipes</p> 
+                <div id="NomeAmarela" class="itensTabela"></div>
+                <div id="NomeLaranja" class="itensTabela"></div>
+                <div id="NomeRoxa" class="itensTabela"></div>
+                <div id="NomeVerde" class="itensTabela"></div>
+                <div id="NomeVermelha" class="itensTabela"></div>
+                
+                
+            </div>
+            <div id="pontoKit" class="itensTabela2">
+                
+                <p id="titulo">Pontos Iniciais</p> 
+                <div id="PontIniAmarela"class="itensTabela"></div>
+                <div id="PontIniLaranja"class="itensTabela"></div>
+                <div id="PontIniRoxa"class="itensTabela"></div>
+                <div id="PontIniVerde"class="itensTabela"></div>
+                <div id="PontIniVermelha"class="itensTabela"></div>
+            </div>
+            <div id="pontoParc" class="itensTabela2">
+                <p id="titulo">Pontos Adicionais</p> 
+                <div id="PontParcAmarela"class="itensTabela"></div>
+                <div id="PontParcLaranja"class="itensTabela"></div>
+                <div id="PontParcRoxa"class="itensTabela"></div>
+                <div id="PontParcVerde"class="itensTabela"></div>
+                <div id="PontParcVermelha"class="itensTabela"></div>
+            </div>
+            <div id="pontoFinal" class="itensTabela2">
+                <p id="titulo">Pontos Finais</p> 
+                <div id="PontFinalAmarela"class="itensTabela"></div>
+                <div id="PontFinalLaranja"class="itensTabela"></div>
+                <div id="PontFinalRoxa" class="itensTabela"></div>
+                <div id="PontFinalVerde" class="itensTabela"></div>
+                <div id="PontFinalVermelha" class="itensTabela"></div>
+                
+                
+            </div>
+            <!-- 
+                <div id="amarela" class="equipeFinal">
+                    <p>Amarela</p>
+                </div>
+                <div id="laranja" class="equipeFinal">
+                    <p>Laranja</p>
+                </div>
+                <div id="roxa" class="equipeFinal">
+                    <p>Roxa</p>
+                </div>
+                <div id="verde" class="equipeFinal">
+                    <p>Verde</p>
+                </div>
+                <div id="vermelha" class="equipeFinal">
+                    <p>Vermelha</p>
+                </div> 
+            -->
+            
+        </div>
+    </div>
+
     
+
+    <script src="script.js"></script>
 </body>
 </html>

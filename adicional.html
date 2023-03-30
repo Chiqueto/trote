@@ -14,8 +14,10 @@
     <div id="container">
 
         <div id="profile">
-            <img src="./assets/logo-trote-2.png"
+            <a href="index.html">
+                <img src="./assets/logo-trote-2.png"
                 alt="Trote Solidário 2023"/>
+            </a>
             <p> @troteunifacef </p>
             <div id="switch" onclick="trocaSwitch()">
                 <button></button>
@@ -23,9 +25,6 @@
             </div>
         </div>
         <ul> <!-- unorded list -->
-            <li> 
-                <a href="index.html"> Home </a>   
-            </li>
             <li> 
                 <a href="calculadora_trote.html">Calculadora trote</a> 
             </li>
@@ -36,7 +35,16 @@
 
         <div id="adicional">
             <H2>Itens adicionais Kit alimentação + suplemento</H2>
-
+            <p>
+            Qual equipe deseja calcular 
+                <select name="equipes" id="equipes">
+                    <option value="Amarela" id="amarela">Amarela</option>
+                    <option value="Laranja" id="laranja">Laranja</option>
+                    <option value="Roxa" id="roxa">Roxa</option>
+                    <option value="Verde" id="verde">Verde</option>
+                    <option value="Vermelha" id="vermelha">Vermelha</option>
+                </select>
+            </p>
             <div>
                 <input onclick="verificaChecagem('padrao')" type="checkbox" id="padrao"> Conjunto padrão
                 <input type="number" id="qtdePadrao" disabled="true" class="numeral">
