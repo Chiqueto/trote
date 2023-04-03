@@ -120,7 +120,30 @@ footer{
     font-size: 12px;
 }
 
+@media (min-height: 740px) {
+    body{
+        background: var(--back-url);
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+         height: 125vh;
+    }
+}
+
+@media (min-width: 700px) {
+    :root{
+        --bg-url: url(./assets/bg-desktop.jpg)
+    }
+
+    .light{
+        --bg-url: url(./assets/bg-desktop-light.jpg)
+    }
+}
+
+
+
 #switch{
+    
     position: relative;
     width: 64px;
     margin: 4px auto;
@@ -225,6 +248,7 @@ option{
     border: 1px solid  var(--stroke-color);
 
 }
+
 .itensTabela{
     border: 1px solid  var(--stroke-color);
 }
