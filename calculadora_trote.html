@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css"/>
-    <title>Condicional</title>
+    <title>Calculadora Trote</title>
 </head>
 <body>
     <div id="container">
@@ -27,14 +27,19 @@
             <li> 
                 <a href="adicional.html">Calcular Adicional </a>   
             </li>
+            <li> 
+                <a href="pontuacao_final.html">Pontuação Final</a> 
+            </li>
         </ul>
         <div id="entrega_kits">
             
             <h2>Calculadora do Trote</h2>
+            
+            <span id="limpar"><input type="button" class="btncriaequipes" value="Criar Equipes" id="botao" onclick="criaobj()"></span>
 
             <p>
                 Qual equipe deseja calcular 
-                <select name="equipes" id="equipes">
+                <select name="equipes" class="nomeequipes" id="equipes" disabled="true">
                     <option value="Amarela" id="amarela">Amarela</option>
                     <option value="Laranja" id="laranja">Laranja</option>
                     <option value="Roxa" id="roxa">Roxa</option>
@@ -44,8 +49,8 @@
             </p>
 
             <p>
-                Informe o total de kits entregues: <input type="number" id="kits">
-                <input type="button" value="Calcular pontuação" id="botao" onclick="calcpont()">
+                Informe o total de kits entregues: <input type="number" id="kits" class="textokits" disabled="true">
+                <input type="button" value="Calcular pontuação" id="botao" class="btncalc" disabled="true" onclick="calcpont()">
             </p>
 
             <div>
@@ -53,17 +58,14 @@
             </div>
          </div>
 
-        <!--
+    
         <div id="social">
             <a href="https://github.com/Chiqueto" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
             <a href="https://instagram.com/lfchiqueto" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
             <a href="https://youtube.com/@luisfelipe9867" target="_blank"><ion-icon name="logo-youtube"></ion-icon></a>
             <a href="https://www.linkedin.com/in/luis-felipe-chiqueto-628b8625a/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
         </div>
-        -->
         
-    
-
         <footer>
             
             Feito por alunos da Turma VII de Bacharelado de

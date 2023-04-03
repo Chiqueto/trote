@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -7,75 +7,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipes</title>
+    <title>Pontuação Final</title>
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+
     <div id="container">
+
         <div id="profile">
             <a href="index.html">
                 <img src="./assets/logo-trote-2.png"
                 alt="Trote Solidário 2023"/>
             </a>
+            
             <p> @troteunifacef </p>
             <div id="switch" onclick="trocaSwitch()">
                 <button></button>
                 <span></span>
             </div>
+        </div>
+        <ul> <!-- unorded list -->
+            <li> 
+                <a href="calculadora_trote.html">Calculadora trote</a> 
+            </li>
+            <li> 
+                <a href="adicional.html">Calculadora Adicional</a> 
+            </li>
+
+        <input type="button" value="Mostrar Pontuação" onclick="mostrar()">
+        
+        
         <table>
             <tr>
-                <th>Equipe</th>
-                <th>Cursos</th>
-                <th>Alunos</th>
+                <th id="titulo">Equipes</th> 
+                <th id="titulo">Pontos Iniciais</th> 
+                <th id="titulo">Pontos Adicionais</th> 
+                <th id="titulo">Pontos Finais</th> 
+
             </tr>
             <tr>
-                <td>Amarela</td>
-                <td>
-                    Ciências Contábeis<br>
-                    Engenharia de Software
-                </td>
-                <td>84</td>
+                <td id="NomeAmarela" ></td>
+                <td id="PontIniAmarela"></td>
+                <td id="PontParcAmarela"></td>
+                <td id="PontFinalAmarela"></td>
             </tr>
             <tr>
-                <td>Laranja</td>
-                <td>
-                    Administração Diurno<br>
-                    Administração Noturno<br>
-                    Comunicação Social
-                </td>
-                <td>88</td>
+                <td id="NomeLaranja" ></td>
+                <td id="PontIniLaranja"></td>
+                <td id="PontParcLaranja"></td>
+                <td id="PontFinalLaranja"></td>
             </tr>
             <tr>
-                <td>Roxa</td>
-                <td>
-                    Enfermagem<br>
-                    Medicina        
-                </td>
-                <td>84</td>
+                <td id="NomeRoxa" ></td>
+                <td id="PontIniRoxa"></td>
+                <td id="PontParcRoxa"></td>
+                <td id="PontFinalRoxa" ></td>
+
             </tr>
             <tr>
-                <td>Verde</td>
-                <td>
-                    Letras<br>
-                    Matemática<br>
-                    Psicologia
-                </td>
-                <td>86</td>
+                <td id="NomeVerde" ></td>
+                <td id="PontIniVerde"></td>
+                <td id="PontParcVerde"></td>
+                <td id="PontFinalVerde" ></td>
+
             </tr>
             <tr>
-                <td>Vermelha</td>
-                <td>
-                    Ciência da Computação<br>
-                    Engenharia Civil<br>
-                    Engenharia de Produção<br>
-                    Sistemas de Informação
-                </td>
-                <td>89</td>
+                <td id="NomeVermelha" ></td>
+                <td id="PontIniVermelha"></td> 
+                <td id="PontParcVermelha"></td>
+                <td id="PontFinalVermelha" ></td>
+
             </tr>
         </table>
-                
-            
-        </div>
+
         <div id="social">
             <a href="https://github.com/Chiqueto" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
             <a href="https://instagram.com/lfchiqueto" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
@@ -86,7 +90,8 @@
             Feito por alunos da Turma VII de Bacharelado de
             Engenharia de Software do <a href="https://unifacef.com.br" target="_blank">Uni-FACEF</a>
         </footer>
-    </div>  
+    </div>
+
     <script src="script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

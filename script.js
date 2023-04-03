@@ -1,12 +1,33 @@
-
 //Função para criar o objeto das equipes
-function Equipe(nomeEquipe, pontKit, pontParc, pontFinal){
+function Equipe(nomeEquipe, pontKit=0, pontParc=0, pontFinal){
     pontFinal = pontKit +  pontParc;
     
     this.nome = nomeEquipe;
     this.pontini  = pontKit;
     this.pontparc = pontParc;
     this.pontFinal = pontFinal;
+}
+
+//cria as equipes
+function criaobj(){
+    let equipeAmarela = new Equipe('Amarela')
+    let equipeLaranja = new Equipe('Laranja')
+    let equipeRoxa = new Equipe('Roxa')
+    let equipeVerde = new Equipe('Verde')
+    let equipeVermelha = new Equipe('Vermelha')
+
+    //armazenar as equipes no localstorage
+    localStorage.setItem('equipeAmarela', JSON.stringify(equipeAmarela))
+    localStorage.setItem('equipeLaranja', JSON.stringify(equipeLaranja))
+    localStorage.setItem('equipeRoxa', JSON.stringify(equipeRoxa))
+    localStorage.setItem('equipeVerde', JSON.stringify(equipeVerde))
+    localStorage.setItem('equipeVermelha', JSON.stringify(equipeVermelha))
+
+    document.querySelector('.nomeequipes').disabled = !document.querySelector('.nomeequipes').disabled
+    document.querySelector('.textokits').disabled = !document.querySelector('.textokits').disabled
+    document.querySelector('.btncalc').disabled = !document.querySelector('.btncalc').disabled
+    document.getElementById('limpar').innerHTML = 'Equipes Criadas com sucesso!'
+
 }
 
 
@@ -22,11 +43,11 @@ function trocaSwitch(){
     }
 }
 
+//calculadora dos pontos 
 function calcpont(){
     let kits = Number(document.getElementById('kits').value)
     let pontos 
     let res = document.getElementById('res')
-    let pontoParcial = 0
 
     let equipenome = document.getElementById('equipes').value
    
@@ -45,49 +66,56 @@ function calcpont(){
         pontos = 0
     }
 
-    //CRIANDO OS OBJETOS DAS EQUIPES
 
+    //atribui o valor a equipe selecionada apenas
     if(equipenome == 'Amarela'){
-
-        let equipeAmarela = new Equipe(equipenome, pontos, pontoParcial)
-        equipeAmarela.pontparc = pontoParcial
+        //Recupera as strings criados no onload
+        let equipeAmarelaString = localStorage.getItem('equipeAmarela')
+        //transforma em objeto dnv
+        let equipeAmarela = JSON.parse(equipeAmarelaString)
+        
+        equipeAmarela.pontini = pontos
 
         //Transformar o objeto em String  e salvar no LocalStorage
         localStorage.setItem('equipeAmarela', JSON.stringify(equipeAmarela))
-
         console.log(equipeAmarela)
+
     }else if(equipenome == 'Laranja'){
-        let equipeLaranja = new Equipe(equipenome, pontos, pontoParcial)
-        equipeLaranja.pontparc = pontoParcial
-        
-        //Transformar o objeto em String  e salvar no LocalStorage
+        let equipeLaranjaString = localStorage.getItem('equipeLaranja')
+        let equipeLaranja = JSON.parse(equipeLaranjaString)
+
+        equipeLaranja.pontini = pontos
+     
         localStorage.setItem('equipeLaranja', JSON.stringify(equipeLaranja))
-
         console.log(equipeLaranja)
+
     }else if(equipenome == 'Roxa'){
-        let equipeRoxa = new Equipe(equipenome, pontos, pontoParcial)
+        let equipeRoxaString = localStorage.getItem('equipeRoxa')
+        let equipeRoxa = JSON.parse(equipeRoxaString)
 
-        //Transformar o objeto em String  e salvar no LocalStorage
-        localStorage.setItem('equipeRoxa', JSON.stringify(equipeRoxa))
-        equipeRoxa.pontparc = pontoParcial
-        
+        equipeRoxa.pontini = pontos
+
+        localStorage.setItem('equipeRoxa', JSON.stringify(equipeRoxa))     
         console.log(equipeRoxa)
+
     }else if(equipenome == 'Verde'){
-        let equipeVerde = new Equipe(equipenome, pontos, pontoParcial)
-        equipeVerde.pontparc = pontoParcial
+        let equipeVerdeString = localStorage.getItem('equipeVerde')
+        let equipeVerde = JSON.parse(equipeVerdeString)
 
-        //Transformar o objeto em String  e salvar no LocalStorage
+        equipeVerde.pontini = pontos
+
         localStorage.setItem('equipeVerde', JSON.stringify(equipeVerde))
-
         console.log(equipeVerde)
+
     }else if(equipenome == 'Vermelha'){
-        let equipeVermelha = new Equipe(equipenome, pontos, pontoParcial)
-        equipeVermelha.pontparc = pontoParcial
+        let equipeVermelhaString = localStorage.getItem('equipeVermelha')
+        let equipeVermelha = JSON.parse(equipeVermelhaString)
 
-        //Transformar o objeto em String  e salvar no LocalStorage
+        equipeVermelha.pontini = pontos
+
         localStorage.setItem('equipeVermelha', JSON.stringify(equipeVermelha))
-
         console.log(equipeVermelha)
+
     }else{
         alert("Selecione uma equipe")
     }
@@ -96,6 +124,7 @@ function calcpont(){
 }
 
 function verificaChecagem(texto){
+    //verfica se está checado ou não, se estiver habilita para inserir um valor
     if(texto == 'padrao'){
         document.getElementById('qtdePadrao').disabled = !document.getElementById('qtdePadrao').disabled 
     }
@@ -124,6 +153,7 @@ function calcularAdicional(){
     let equipenome = document.getElementById('equipes').value
     let pontoParcial = 0
 
+    //atribui o valor digitado na variavel
     if(document.getElementById('padrao').checked){
         pontoParcial = pontoParcial + document.getElementById('qtdePadrao').value * 50
     }
@@ -151,55 +181,45 @@ function calcularAdicional(){
     if(equipenome == 'Amarela'){
         //Receber as Strings das equipes
         let equipeAmarelaString = localStorage.getItem('equipeAmarela')
+        
         //Transformar em objeto dnv
         let equipeAmarela = JSON.parse(equipeAmarelaString)
+       
+        //atribui o valor dos pontos parciais a equipe
         equipeAmarela.pontparc = pontoParcial
 
-        document.getElementById('total').innerHTML = ` <br> Equipe Amarela ${equipeAmarela.pontFinal}`
-
+        //armazena novamente
         localStorage.setItem('equipeAmarela', JSON.stringify(equipeAmarela))
 
-    }else if(equipenome == 'Laranja'){
-        //Receber as Strings das equipes
-        let equipeLaranjaString = localStorage.getItem('equipeLaranja')
-        //Transformar em objeto dnv
+    }else if(equipenome == 'Laranja'){       
+        let equipeLaranjaString = localStorage.getItem('equipeLaranja')       
         let equipeLaranja = JSON.parse(equipeLaranjaString)
+        
         equipeLaranja.pontparc = pontoParcial
-
-        document.getElementById('total').innerHTML = ` <br> Equipe Laranja ${equipeLaranja.pontFinal}`
-
+      
         localStorage.setItem('equipeLaranja', JSON.stringify(equipeLaranja))
 
-    }else if(equipenome == 'Roxa'){
-        //Receber as Strings das equipes
-        let equipeRoxaString = localStorage.getItem('equipeRoxa')
-        //Transformar em objeto dnv
+    }else if(equipenome == 'Roxa'){      
+        let equipeRoxaString = localStorage.getItem('equipeRoxa')       
         let equipeRoxa = JSON.parse(equipeRoxaString)
+
         equipeRoxa.pontparc = pontoParcial
-
-        document.getElementById('total').innerHTML = ` <br> Equipe Roxa ${equipeRoxa.pontFinal}`
-
+       
         localStorage.setItem('equipeRoxa', JSON.stringify(equipeRoxa))
 
-    }else if(equipenome == 'Verde'){
-        //Receber as Strings das equipes
-        let equipeVerdeString = localStorage.getItem('equipeVerde')
-        //Transformar em objeto dnv
+    }else if(equipenome == 'Verde'){      
+        let equipeVerdeString = localStorage.getItem('equipeVerde')  
         let equipeVerde = JSON.parse(equipeVerdeString)
+ 
         equipeVerde.pontparc = pontoParcial
-
-        document.getElementById('total').innerHTML = ` <br> Equipe Verde ${equipeVerde.pontFinal}`
 
         localStorage.setItem('equipeVerdeObj', JSON.stringify(equipeVerde))
 
     }else if(equipenome == 'Vermelha'){
-        //Receber as Strings das equipes
-        let equipeVermelhaString = localStorage.getItem('equipeVermelha')
-        //Transformar em objeto dnv
+        let equipeVermelhaString = localStorage.getItem('equipeVermelha')        
         let equipeVermelha = JSON.parse(equipeVermelhaString)
-        equipeVermelha.pontparc = pontoParcial
 
-        document.getElementById('total').innerHTML = ` <br> Equipe Vermelha ${equipeVermelha.pontFinal}`
+        equipeVermelha.pontparc = pontoParcial
 
         localStorage.setItem('equipeVermelha', JSON.stringify(equipeVermelha))
 
@@ -208,11 +228,10 @@ function calcularAdicional(){
     }
 
     document.getElementById('total').innerHTML += `<br>A pontuação adicional da Equipe ${equipenome} é: ${pontoParcial}`
-
 }
 
-
 function mostrar(){
+    //recuperando os dados das equipes
     let equipeAmarelaString = localStorage.getItem('equipeAmarela')
     let equipeAmarela = JSON.parse(equipeAmarelaString)
     let equipeLaranjaString = localStorage.getItem('equipeLaranja')
@@ -224,13 +243,20 @@ function mostrar(){
     let equipeVermelhaString = localStorage.getItem('equipeVermelha')
     let equipeVermelha = JSON.parse(equipeVermelhaString)
 
-    
+    //definindo a pontuação final
+    equipeAmarela.pontFinal = equipeAmarela.pontini + equipeAmarela.pontparc
+    equipeLaranja.pontFinal = equipeLaranja.pontini + equipeLaranja.pontparc
+    equipeRoxa.pontFinal = equipeRoxa.pontini + equipeRoxa.pontparc
+    equipeVerde.pontFinal = equipeVerde.pontini + equipeVerde.pontparc
+    equipeVermelha.pontFinal = equipeVermelha.pontini + equipeVermelha.pontparc
+
+        //apresentando os resultados na tela
         document.getElementById('NomeAmarela').innerHTML = `${equipeAmarela.nome}` 
         document.getElementById('NomeLaranja').innerHTML = `${equipeLaranja.nome}` 
         document.getElementById('NomeRoxa').innerHTML = `${equipeRoxa.nome}` 
         document.getElementById('NomeVerde').innerHTML = `${equipeVerde.nome}` 
         document.getElementById('NomeVermelha').innerHTML = `${equipeVermelha.nome}` 
-    
+
         document.getElementById('PontIniAmarela').innerHTML = `${equipeAmarela.pontini}` 
         document.getElementById('PontIniLaranja').innerHTML = `${equipeLaranja.pontini}` 
         document.getElementById('PontIniRoxa').innerHTML = `${equipeRoxa.pontini}` 
