@@ -120,13 +120,9 @@ footer{
     font-size: 12px;
 }
 
-@media (min-height: 740px) {
+@media (min-height: 500px) {
     body{
-        background: var(--back-url);
-        background-repeat: no-repeat;
-        background-position: top center;
-        background-size: cover;
-        height: 125vh;
+        height: 700px;
     }
 }
 
@@ -237,7 +233,7 @@ table{
     align-items: center;
     justify-content: center;
     border-collapse: collapse; 
-    margin: 10px auto;
+    margin: 16px auto;
      
 }
 th{
@@ -246,4 +242,12 @@ th{
 }
 td{
     border: 1px solid var(--stroke-color);
+}
+
+#Regulamento{
+    padding: 10px;
+    border: 1px solid var(--stroke-color);
+    border-radius: 10px;
+    margin: 16px 0;
+    text-align: left;
 }
