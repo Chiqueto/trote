@@ -7,6 +7,18 @@ function Equipe(nomeEquipe, pontKit=0, pontParc=0, pontFinal){
     this.pontparc = pontParc;
     this.pontFinal = pontFinal;
 }
+ 
+//verifica se as equipes já foram criadas, para não ter que criar toda vez que entrar na aba de calculadora!
+window.onload = function verificaObj(){
+    if("equipeAmarela" in localStorage){
+        
+        document.querySelector('.nomeequipes').disabled = !document.querySelector('.nomeequipes').disabled
+        document.querySelector('.textokits').disabled = !document.querySelector('.textokits').disabled
+        document.querySelector('.btncalc').disabled = !document.querySelector('.btncalc').disabled
+        document.getElementById('limpar').innerHTML = 'Equipes Criadas com sucesso!'
+        
+    }
+}
 
 //cria as equipes
 function criaobj(){
