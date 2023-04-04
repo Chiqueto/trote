@@ -139,7 +139,6 @@ footer{
 
 
 #switch{
-    
     position: relative;
     width: 64px;
     margin: 4px auto;
@@ -234,14 +233,16 @@ table{
     justify-content: center;
     border-collapse: collapse; 
     margin: 16px auto;
-     
+     background: var(--surface-color);
 }
 th{
     border: 1px solid var(--stroke-color);
     padding: 5px;
+
 }
 td{
     border: 1px solid var(--stroke-color);
+    padding: 5px;
 }
 
 #Regulamento{

@@ -134,11 +134,17 @@ function verificaChecagem(texto){
     if(texto == 'suplemento'){
         document.getElementById('qtdeSuplemento').disabled = !document.getElementById('qtdeSuplemento').disabled 
     }
-    if(texto == 'arroz'){
-        document.getElementById('qtdeArroz').disabled = !document.getElementById('qtdeArroz').disabled 
+    if(texto == 'arroz5'){
+        document.getElementById('qtdeArroz5').disabled = !document.getElementById('qtdeArroz5').disabled 
     }
-    if(texto == 'feijao'){
-        document.getElementById('qtdeFeijao').disabled = !document.getElementById('qtdeFeijao').disabled 
+    if(texto == 'arroz1'){
+        document.getElementById('qtdeArroz1').disabled = !document.getElementById('qtdeArroz1').disabled 
+    }
+    if(texto == 'feijao2'){
+        document.getElementById('qtdeFeijao2').disabled = !document.getElementById('qtdeFeijao2').disabled 
+    }
+    if(texto == 'feijao1'){
+        document.getElementById('qtdeFeijao1').disabled = !document.getElementById('qtdeFeijao1').disabled 
     }
     if(texto == 'macarrao'){
         document.getElementById('qtdeMacarrao').disabled = !document.getElementById('qtdeMacarrao').disabled 
@@ -163,11 +169,17 @@ function calcularAdicional(){
     if(document.getElementById('suplemento').checked){
         pontoParcial = pontoParcial + document.getElementById('qtdeSuplemento').value * 10
     }
-    if(document.getElementById('arroz').checked){
-        pontoParcial = pontoParcial + document.getElementById('qtdeArroz').value * 5
+    if(document.getElementById('arroz5').checked){
+        pontoParcial = pontoParcial + document.getElementById('qtdeArroz5').value * 5
     }
-    if(document.getElementById('feijao').checked){
-        pontoParcial = pontoParcial + document.getElementById('qtdeFeijao').value * 2
+    if(document.getElementById('arroz1').checked){
+        pontoParcial = pontoParcial + document.getElementById('qtdeArroz1').value * 1
+    }
+    if(document.getElementById('feijao2').checked){
+        pontoParcial = pontoParcial + document.getElementById('qtdeFeijao2').value * 2
+    }
+    if(document.getElementById('feijao1').checked){
+        pontoParcial = pontoParcial + document.getElementById('qtdeFeijao1').value * 1
     }
     if(document.getElementById('macarrao').checked){
         pontoParcial = pontoParcial + document.getElementById('qtdeMacarrao').value * 0.5
@@ -227,7 +239,7 @@ function calcularAdicional(){
         alert('Selecione uma equipe')
     }
 
-    document.getElementById('total').innerHTML += `<br>A pontuação adicional da Equipe ${equipenome} é: ${pontoParcial}`
+    document.getElementById('total').innerHTML = `<br>A pontuação adicional da Equipe ${equipenome} é: ${pontoParcial}`
 }
 
 function mostrar(){
