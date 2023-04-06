@@ -10,35 +10,45 @@ function Equipe(nomeEquipe, pontKit=0, pontParc=0, pontFinal){
  
 //verifica se as equipes já foram criadas, para não ter que criar toda vez que entrar na aba de calculadora!
 window.onload = function verificaObj(){
-    if("equipeAmarela" in localStorage){
+    if("equipeAmarela" in localStorage && "equipeLaranja" in localStorage && "equipeRoxa" in localStorage && "equipeVerde" in localStorage && "equipeVermelha" in localStorage){
         
         document.querySelector('.nomeequipes').disabled = !document.querySelector('.nomeequipes').disabled
         document.querySelector('.textokits').disabled = !document.querySelector('.textokits').disabled
         document.querySelector('.btncalc').disabled = !document.querySelector('.btncalc').disabled
-        document.getElementById('limpar').innerHTML = 'Equipes Criadas com sucesso!'
+        //document.getElementById('limpar').innerHTML = 'Equipes Criadas com sucesso!'
         
     }
 }
 
 //cria as equipes
 function criaobj(){
-    let equipeAmarela = new Equipe('Amarela')
-    let equipeLaranja = new Equipe('Laranja')
-    let equipeRoxa = new Equipe('Roxa')
-    let equipeVerde = new Equipe('Verde')
-    let equipeVermelha = new Equipe('Vermelha')
-
-    //armazenar as equipes no localstorage
-    localStorage.setItem('equipeAmarela', JSON.stringify(equipeAmarela))
-    localStorage.setItem('equipeLaranja', JSON.stringify(equipeLaranja))
-    localStorage.setItem('equipeRoxa', JSON.stringify(equipeRoxa))
-    localStorage.setItem('equipeVerde', JSON.stringify(equipeVerde))
-    localStorage.setItem('equipeVermelha', JSON.stringify(equipeVermelha))
-
-    document.querySelector('.nomeequipes').disabled = !document.querySelector('.nomeequipes').disabled
-    document.querySelector('.textokits').disabled = !document.querySelector('.textokits').disabled
-    document.querySelector('.btncalc').disabled = !document.querySelector('.btncalc').disabled
-    document.getElementById('limpar').innerHTML = 'Equipes Criadas com sucesso!'
+    if("equipeAmarela" in localStorage && "equipeLaranja" in localStorage && "equipeRoxa" in localStorage && "equipeVerde" in localStorage && "equipeVermelha" in localStorage){
+        
+        document.querySelector('.nomeequipes').disabled = !document.querySelector('.nomeequipes').disabled
+        document.querySelector('.textokits').disabled = !document.querySelector('.textokits').disabled
+        document.querySelector('.btncalc').disabled = !document.querySelector('.btncalc').disabled
+        //document.getElementById('limpar').innerHTML = 'Equipes Criadas com sucesso!'
+        
+    }else{
+        let equipeAmarela = new Equipe('Amarela')
+        let equipeLaranja = new Equipe('Laranja')
+        let equipeRoxa = new Equipe('Roxa')
+        let equipeVerde = new Equipe('Verde')
+        let equipeVermelha = new Equipe('Vermelha')
+    
+        //armazenar as equipes no localstorage
+        localStorage.setItem('equipeAmarela', JSON.stringify(equipeAmarela))
+        localStorage.setItem('equipeLaranja', JSON.stringify(equipeLaranja))
+        localStorage.setItem('equipeRoxa', JSON.stringify(equipeRoxa))
+        localStorage.setItem('equipeVerde', JSON.stringify(equipeVerde))
+        localStorage.setItem('equipeVermelha', JSON.stringify(equipeVermelha))
+    
+        document.querySelector('.nomeequipes').disabled = !document.querySelector('.nomeequipes').disabled
+        document.querySelector('.textokits').disabled = !document.querySelector('.textokits').disabled
+        document.querySelector('.btncalc').disabled = !document.querySelector('.btncalc').disabled
+        document.getElementById('limpar').innerHTML = 'Equipes Criadas com sucesso!'
+    }
+    
 
 }
 
@@ -65,7 +75,6 @@ function calcpont(){
    
     if(kits == '' || kits < 0){
         alert('Por favor, digite um valor! Impossível calcular!')
-        pontos = 'valor inválido!!!'
     }else if(kits >= 80){
         pontos = 5000
     }else if(kits < 80 && kits >= 64){
