@@ -120,11 +120,17 @@ footer{
     font-size: 12px;
 }
 
-@media (min-height: 500px) {
+
+@media (max-width: 450px) {
+    #container{
+        width: 400px;
+    }
     body{
-        height: 700px;
+        height: 1000px;
+        
     }
 }
+
 
 @media (min-width: 700px) {
     :root{
